@@ -1,0 +1,1 @@
+java -Dcuke_features=resources -jar test.jar
