@@ -35,7 +35,6 @@ public class RunnerTest extends AbstractTestNGCucumberTests {
 
         @BeforeSuite
         public void beforeSuite() throws Exception {
-
                 RunnerHelper.setCucumberOptions();
         }
 

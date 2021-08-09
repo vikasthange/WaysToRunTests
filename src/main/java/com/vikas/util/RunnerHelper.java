@@ -6,13 +6,14 @@ public class RunnerHelper {
     public static void setCucumberOptions() throws Exception {
         for (CukeOptions option : CukeOptions.values()){
             String value = System.getProperty(option.getParameterName());
+            System.out.println(option+" - "+value);
             if(value!=null){
                 Object v= null;
                 if(option==CukeOptions.TAGS){
-                    v= value;
+                    v = value;
                 }
                 else{
-                    v= option.isBoolean()? Boolean.parseBoolean(value):value.split(",");
+                    v = option.isBoolean()? Boolean.parseBoolean(value):value.split(",");
                 }
                 Reflection.changeCucumberAnnotation(option.getCucumberOptionParamName(),v);
             }
